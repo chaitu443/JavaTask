@@ -2,6 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.cb.guessnum;
 
 import java.util.Random;
@@ -46,7 +50,7 @@ public static void main(String[] args) {
             random = min;
             cntr += 1;
             System.out.println("Is your number: " + random);
-            System.out.println("Input if number should be higher, lower, or correct: ");
+            System.out.println("Input if number should be higher, lower, or yes: ");
             input = reader.next();
             } else {
                 input = lower;
@@ -60,7 +64,7 @@ public static void main(String[] args) {
             random = max;
             cntr += 1;
             System.out.println("Is your number: " + random);
-            System.out.println("Input if number should be higher, lower, or correct: ");
+            System.out.println("Input if number should be higher, lower, or yes: ");
             input = reader.next();
             } else {
                 input = higher;
