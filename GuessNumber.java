@@ -1,4 +1,3 @@
-# JavaTask
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -19,7 +18,7 @@ public static void main(String[] args) {
     
     //variables that stores the lower and upper bounds
     String higher = "higher", lower = "lower", correct = "correct", input;
-    int random, random2 = 1, random3 = 100, randomLast, cntr = 1;
+    int random, min = 1, max = 100, randomLast, cntr = 1;
     int lowerBound = 0;
     int upperBound = 100;
 
@@ -40,13 +39,11 @@ public static void main(String[] args) {
     while (!input.equals("yes") && !input.equals("end")){
         if (input.equals("lower")){
             upperBound = random;
-            randomLast = random2;
-            random2 = generator.nextInt(upperBound - lowerBound + 1) + lowerBound;
-            System.out.println("upperBound:"+upperBound+" & lowerBound:"+lowerBound);
-            System.out.println("random2:"+random2+" & randomLast:"+randomLast);
-
-            if ((random2 < random) && (random2 < randomLast)){
-            random = random2;
+            randomLast = min;
+            min = generator.nextInt(upperBound - lowerBound + 1) + lowerBound;
+ 
+            if ((min < random) && (min < randomLast)){
+            random = min;
             cntr += 1;
             System.out.println("Is your number: " + random);
             System.out.println("Input if number should be higher, lower, or correct: ");
@@ -56,13 +53,11 @@ public static void main(String[] args) {
             }
         } else if (input.equals("higher")){
             lowerBound = random;
-            randomLast = random3;
-            random3 = generator.nextInt(upperBound - lowerBound + 1) + lowerBound;
-            System.out.println("upperBound:"+upperBound+" & lowerBound:"+lowerBound);
-            System.out.println("random2:"+random3+" & randomLast:"+randomLast);
+            randomLast = max;
+            max = generator.nextInt(upperBound - lowerBound + 1) + lowerBound;
 
-            if ((random3 > random) && (random3 > randomLast)){
-            random = random3;
+            if ((max > random) && (max > randomLast)){
+            random = max;
             cntr += 1;
             System.out.println("Is your number: " + random);
             System.out.println("Input if number should be higher, lower, or correct: ");
